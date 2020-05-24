@@ -17,6 +17,22 @@ class LoadDatabase {
             log.info("Preloading " + repository.save(new Employee("Frodo", "baggins","theif")));
         };
     }
+
+    @Bean
+    CommandLineRunner initOrders(OrderRepository orderRepository) {
+
+//        orderRepository.save(new Order("Mac", Status.COMPLETED));
+//        orderRepository.save(new Order("M30", Status.IN_PROGRESS));
+
+//        orderRepository.findAll().forEach(order -> {
+//            log.info("Preloaded " + order);
+//        });
+
+        return args -> {
+            log.info("Preloading " + orderRepository.save(new Order("Mac", Status.COMPLETED)));
+            log.info("Preloading " + orderRepository.save(new Order("M30", Status.IN_PROGRESS)));
+        };
+    }
 }
 /*
 Spring Boot will run ALL CommandLineRunner "beans"

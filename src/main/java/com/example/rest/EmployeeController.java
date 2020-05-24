@@ -183,7 +183,7 @@ class EmployeeController {
 
     /* NEW firstName+lastName */
     @PutMapping("/employees/{id}")
-    ResponseEntity<?> replaceEmployee(@ResponseBody Employee newEmployee, @PathVariable Long id) throws URISyntaxException {
+    ResponseEntity<?> replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Long id) throws URISyntaxException {
 
         Employee updatedEmployee = repository.findById(id)
                                     .map(employee -> {

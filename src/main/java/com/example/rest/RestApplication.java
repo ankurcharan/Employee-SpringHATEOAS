@@ -15,3 +15,6 @@ public class RestApplication {
 
 // Tutorial at:
 //https://spring.io/guides/tutorials/rest/
+
+// Github Example
+//https://github.com/spring-projects/spring-hateoas-examples
